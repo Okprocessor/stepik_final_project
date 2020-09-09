@@ -1,9 +1,5 @@
-import time
-
-link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-
-def test_should_have_button(browser):
+def test_guest_can_go_to_login_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/"
     browser.get(link)
-    time.sleep(30)
-    browser.find_element_by_css_selector(".btn-add-to-basket")
-    assert browser.find_element_by_css_selector(".btn-add-to-basket").is_displayed()
+    login_link = browser.find_element_by_css_selector("#login_link")
+    login_link.click()
